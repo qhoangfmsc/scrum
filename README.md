@@ -1,5 +1,6 @@
-# Scrum Project is developed by using Vanilla JS and Node.js
-# The Project is Practical Education
+# Practical Education
+This Scrum Project which names Practical Education is developed by using Vanilla JS and Node.js
+
 # Topic
 This project is going to build a platform that can help align what skills company needs and degrees provides by schools
 
