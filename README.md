@@ -6,7 +6,7 @@ This project is going to build a platform that can help align what skills compan
 
 # Details branch (19 main features)
 Customer (student/guest)
-      Account (just for student)
+      Account (just for student)f
           Login
           Logout
           Modify information (just can edit Skill, Name, Password)
