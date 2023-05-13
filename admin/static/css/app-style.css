@@ -494,49 +494,49 @@ hr {
   transition: background .3s;
 }
 
-body.bg-theme1 {
+.bg-theme.bg-theme1 {
   background-image: url(../images/bg-themes/1.png);
 }
-body.bg-theme2 {
+.bg-theme.bg-theme2 {
   background-image: url(../images/bg-themes/2.png);
 }
-body.bg-theme3 {
+.bg-theme.bg-theme3 {
   background-image: url(../images/bg-themes/3.png);
 }
-body.bg-theme4 {
+.bg-theme.bg-theme4 {
   background-image: url(../images/bg-themes/4.png);
 } 
-body.bg-theme5 {
+.bg-theme.bg-theme5 {
   background-image: url(../images/bg-themes/5.png);
 } 
-body.bg-theme6 {
+.bg-theme.bg-theme6 {
   background-image: url(../images/bg-themes/6.png);
 }
-body.bg-theme7 {
+.bg-theme.bg-theme7 {
   background-image: linear-gradient(45deg, #0c675e, #069e90);
 } 
-body.bg-theme8 {
+.bg-theme.bg-theme8 {
   background-image: linear-gradient(567deg, rgba(165, 42, 4, 0.89), rgba(113, 102, 8, 0.89), rgba(13, 95, 16, 0.93), rgba(4, 79, 88, 0.94), rgba(19, 56, 86, 0.9), rgba(24, 32, 78, 0.94), rgba(100, 8, 115, 0.95));
 } 
-body.bg-theme9 {
+.bg-theme.bg-theme9 {
   background-image: linear-gradient(45deg, #29323c, #485563);
 } 
-body.bg-theme10 {
+.bg-theme.bg-theme10 {
   background-image: linear-gradient(45deg, #795548, #945c48);
 } 
-body.bg-theme11 {
+.bg-theme.bg-theme11 {
   background-image: linear-gradient(45deg, #1565C0, #1E88E5);
 } 
-body.bg-theme12 {
+.bg-theme.bg-theme12 {
   background-image: linear-gradient(45deg, #65379b, #886aea);
 }   
-body.bg-theme13 {
+.bg-theme.bg-theme13 {
   background-image: linear-gradient(180deg, #ff5447, #f1076f);
 }
-body.bg-theme14 {
+.bg-theme.bg-theme14 {
   background-image: linear-gradient(180deg, #08a50e, #69bb03);
 }
-body.bg-theme15 {
+.bg-theme.bg-theme15 {
   background-image: linear-gradient(45deg, #6a11cb, #2575fc);
 }   
   

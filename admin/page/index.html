@@ -117,7 +117,7 @@
         <div class="row">
           <div class="col-12 col-lg-12">
             <div class="card">
-              <div class="card-header">List Job
+              <div class="card-header">All Companies
                 <div class="card-action">
                   <div class="dropdown">
                     <a type="button" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="modal"
@@ -129,73 +129,99 @@
                       <div class="modal-dialog">
                         <!-- Modal content -->
                         <div class="modal-content">
-                          <div class="modal-header">
-                            <h4 class="modal-title" style="
-                      color: black;
-                  "> Add Job</h4>
+                          <div class="modal-header" style="background-color: #dee2e6;">
+                            <h4 class="modal-title" style="color: black;">Company Information</h4>
                           </div>
-                          <div class="modal-body">
-                            <!-- NameCompany -->
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" style="
-                          color: black;">Company's Name</span>
+                          <div class="modal-body bg-theme bg-theme1">
+                            <!-- body modal -->
+                            <div class="input-group row mb-3">
+                              <div class="col-3 mt-2 input-group-prepend">
+                                <span class="text-white">Company</span>
                               </div>
-                              <input id="getName" type="text" class="form-control" placeholder="Enter Company's Name">
-                            </div>
-                            <!--Job-->
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" style="
-                          color: black;">Job Name</span>
+                              <div class="col-9">
+                                <input id="getCompany" type="text" class="form-control"
+                                  placeholder="Enter Company's Name">
                               </div>
-                              <input id="getName" type="text" class="form-control" placeholder="Enter Job Name">
                             </div>
-                            <!-- Job Des -->
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" style="
-                          color: black;">Job Descriptions</span>
+
+                            <div class="input-group row mb-3">
+                              <div class="col-3 mt-2 input-group-prepend">
+                                <span class="text-white">Address</span>
                               </div>
-                              <input id="getName" type="text" class="form-control" placeholder="Enter Job Des">
-                            </div>
-                            <!-- Amount -->
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" style="
-                          color: black;">Amount</span>
+                              <div class="col-9">
+                                <input id="getAddress" type="text" class="form-control"
+                                  placeholder="Enter Company's Address">
                               </div>
-                              <input id="getName" type="text" class="form-control" placeholder="Enter Amount">
                             </div>
-                            <!-- Address -->
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" style="
-                          color: black;">Address</span>
+
+                            <div class="input-group row mb-3">
+                              <div class="col-3 mt-2 input-group-prepend">
+                                <span class="text-white">Website</span>
                               </div>
-                              <input id="getName" type="text" class="form-control" placeholder="Enter Address">
+                              <div class="col-9">
+                                <input id="getWebsite" type="text" class="form-control"
+                                  placeholder="Enter Company's Website">
+                              </div>
                             </div>
-                            <!-- Picture -->
+
+                            <div class="input-group row mb-3">
+                              <div class="col-3 mt-2 input-group-prepend">
+                                <span class="text-white">Description</span>
+                              </div>
+                              <div class="col-9">
+                                <textarea id="getDescription" type="text" class="form-control"
+                                  placeholder="Enter Company's Description"></textarea>
+                              </div>
+                            </div>
+
+                            <div class="input-group row mb-3">
+                              <div class="col-3 mt-2 input-group-prepend">
+                                <span class="text-white">Requirement</span>
+                              </div>
+                              <div class="col-9">
+                                <textarea id="getRequirement" type="text" class="form-control"
+                                  placeholder="Enter Company's Requirement"></textarea>
+                              </div>
+                            </div>
+
+                            <div class="input-group row mb-3">
+                              <div class="col-3 mt-2 input-group-prepend">
+                                <span class="text-white">Career</span>
+                              </div>
+                              <div class="col-3">
+                                <input id="getCareer1" type="text" class="form-control" placeholder="Carreer 1">
+                              </div>
+                              <div class="col-3">
+                                <input id="getCareer2" type="text" class="form-control" placeholder="Carreer 2">
+                              </div>
+                              <div class="col-3">
+                                <input id="getCareer3" type="text" class="form-control" placeholder="Carreer 3">
+                              </div>
+                            </div>
                             <!--Image-->
-                            <div style="margin-top: 15px;">
-                              <span style="
-                            color: black;">Picture</span>
-                              <div class="mb-4 d-flex justify-content-center">
-                                <img
-                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRRqx8ytqwSrmW0OjADPckeqTa3PMOvG0FjAw-XnM&s"
-                                  alt="example placeholder" style="width: 200px;" />
+                            <div class="input-group row mb-3">
+                              <div class="col-3 mt-2 input-group-prepend">
+                                <span class="text-white">Logo</span>
                               </div>
-                              <div class="d-flex justify-content-center">
-                                <div class="btn btn-primary btn-rounded">
+                              <div class="col-1">
+                                <img
+                                  src="https://upload.wikimedia.org/wikipedia/commons/2/27/Square%2C_Inc_-_Square_Logo.jpg"
+                                  alt="example placeholder" style="width: 40px;" />
+                              </div>
+                              <div class="col-8">
+                                <div class="btn btn-primary btn-rounded ml-4">
                                   <label class="form-label text-white m-1" for="customFile1">Choose file</label>
                                   <input type="file" class="form-control d-none" id="customFile1" />
                                 </div>
                               </div>
                             </div>
-
                             <!-- CloseBtn -->
-                            <div class="btnADD" style=" border: 5px; text-align: center; text-transform: uppercase; ">
-                              <button type="button" class="btn btn-default" data-dismiss="modal">ADD</button>
+                            <div class="btnADD"
+                              style="text-align: center; text-transform: uppercase; font-size: medium;">
+                              <button type="button" class="btn btn-default text-white"
+                                style="box-shadow: 0px 1px 5px #ffffff;" data-dismiss="modal">
+                                Create new company
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -206,47 +232,20 @@
               </div>
             </div>
             <div class="table-responsive">
-              <table class="table align-items-center table-flush table-borderless">
+              <table class="table align-items-center table-flush table-borderless" id="companyTable">
                 <thead>
                   <tr>
-                    <th>Icon</th>
-                    <th>Name Company</th>
-                    <th>Job</th>
-                    <th>Job Descriptions</th>
-                    <th>Amount</th>
+                    <th>Logo</th>
+                    <th>Company</th>
                     <th>Address</th>
+                    <th>Description</th>
+                    <th>Career</th>
+                    <th>Requirement</th>
+                    <th></th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-                    <td>Iphone 5</td>
-                    <td>#9405822</td>
-                    <td style="
-                      width: 15rem;
-                      display: flex;">
-                      <span style="
-                      width: 20rem;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                      white-space: nowrap;">
-                        Dự án Data Platform Design Project là giai đoạn đầu tiên của chương trình Data Platform (Hệ
-                        thống nền tảng dữ liệu) nhằm thực hiện việc thiết kế toàn bộ giải pháp về dữ liệu lớn có thể
-                        triển khai được thông qua đối tác SI. Mục tiêu chính của dự án là đưa ra kiến trúc Data Platform
-                        hoàn chỉnh nhằm quyết định phương án triển khai phù hợp trong ngắn hạn và mô hình hệ thống Data
-                        Platfrom trong tương lai.
-                        Tham gia cùng CBI/HPE thiết kế/ đánh giá mô hình kiến trúc tổng quan/ triển khai thỏa mãn các
-                        yêu cầu để triển khai trên toàn bộ hệ thống của ACB.
-                        Hiểu rõ từng thành phần trong kiến trúc Data platform.
-                        Lựa chọn công nghệ triển khai từng giai đoạn/ thành phần trong Data platform. (Có trình bày
-                        nguyên nhân lựa chọn, so sánh đánh giá ưu/ nhược từng loại).
-                        Thử nghiệm các công nghệ/ giải pháp lựa chọn trong quá trình thiết kế làm cơ sở cho báo cáo đánh
-                        giá kết quả hoàn thành dự án.
-                        Tổ chức triển khai công việc phát triển các thành phần trong Data platform.</span>
-                    </td>
-                    <td>03 Aug 2017</td>
-                    <td>TPHCM</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -331,7 +330,14 @@
 
   <!-- Index js -->
   <script src="../static/js/index.js"></script>
+  <script src="../static/js/indexnew.js"></script>
+  <script src="../static/js/api.js"></script>
 
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      indexnew.build();
+    });
+  </script>
 
 </body>
 
