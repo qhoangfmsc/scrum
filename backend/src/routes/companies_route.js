@@ -4,6 +4,7 @@ const middleware = require("../middleware");
 const schemas = require("../middleware/schema");
 
 router.post("/create", companies.createCompany);
+router.post("/update", companies.modifyCompany);
 router.get("/get-all", companies.displayAllCompanies);
 
 module.exports = router;

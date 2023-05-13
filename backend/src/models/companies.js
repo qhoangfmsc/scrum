@@ -59,6 +59,49 @@ async function insertCompany(name, address, career, link, avatar, description, r
   }
 }
 
+async function updateCompany(id, name, address, career, link, avatar, description, requirement) {
+  try {
+    await Companies.update(
+      {
+        name: name,
+        address: address,
+        career: career,
+        link: link,
+        avatar: avatar,
+        description: description,
+        requirement: requirement,
+      },
+      {
+        where: {
+          id: id,
+        },
+      }
+    );
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
+async function insertCompany(name, address, career, link, avatar, description, requirement) {
+  try {
+    await Companies.create({
+      name: name,
+      address: address,
+      career: career,
+      link: link,
+      avatar: avatar,
+      description: description,
+      requirement: requirement,
+    });
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
 async function getAllCompanies() {
   try {
     const data = await sequelize.query("Select * from companies", { type: QueryTypes.SELECT });
@@ -68,4 +111,4 @@ async function getAllCompanies() {
   }
 }
 
-module.exports = { Companies, insertCompany, getAllCompanies };
+module.exports = { Companies, insertCompany, updateCompany, getAllCompanies };
