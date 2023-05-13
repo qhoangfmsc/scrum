@@ -16,30 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `students`
+-- Table structure for table `companies`
 --
 
-DROP TABLE IF EXISTS `students`;
+DROP TABLE IF EXISTS `companies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `students` (
-  `id` int NOT NULL,
-  `username` varchar(225) DEFAULT NULL,
-  `password` varchar(225) DEFAULT NULL,
-  `name` varchar(225) DEFAULT NULL,
-  `skill` varchar(225) DEFAULT NULL,
-  `createdAt` varchar(225) DEFAULT NULL,
+CREATE TABLE `companies` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `career` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  `requirement` varchar(500) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `students`
+-- Dumping data for table `companies`
 --
 
-LOCK TABLES `students` WRITE;
-/*!40000 ALTER TABLE `students` DISABLE KEYS */;
-/*!40000 ALTER TABLE `students` ENABLE KEYS */;
+LOCK TABLES `companies` WRITE;
+/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
+INSERT INTO `companies` VALUES (1,'Apple Inc','Cupertino, California, USA ','Technology, Consumer electronics ','https://www.apple.com/ ','https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png ','Apple Inc. is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services. ','•	Requirement: Strong programming skills in Swift, Objective-C, and/or C++, experience in developing iOS or macOS applications, and excellent problem-solving skills.',NULL);
+/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-11 14:35:11
+-- Dump completed on 2023-05-13 20:29:01

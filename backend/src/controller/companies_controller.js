@@ -16,7 +16,7 @@ module.exports = {
         res.status(200).json({ result: "success", content: "Company added successfully!" });
       }
     } catch (err) {
-      res.status(500).send({ result: "fail", content: "Company added fail!" });
+      res.status(404).json({ result: "fail", content: "Company added fail!" });
     }
   },
 
@@ -36,7 +36,7 @@ module.exports = {
         res.status(200).json({ result: "success", content: "Company update successfully!" });
       }
     } catch (err) {
-      res.status(500).send({ result: "fail", content: "Company update fail!" });
+      res.status(404).json({ result: "fail", content: "Company update fail!" });
     }
   },
 
@@ -49,7 +49,7 @@ module.exports = {
         res.status(200).json({ result: "success", content: data });
       }
     } catch (err) {
-      res.status(500).send({ result: "fail", content: "Get companies fail!" });
+      res.status(404).json({ result: "fail", content: "Get companies fail!" });
     }
   },
 };

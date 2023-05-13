@@ -25,10 +25,10 @@ const Companies = sequelize.define(
       type: DataTypes.STRING(255),
     },
     description: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(404),
     },
     requirement: {
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING(404),
     },
     createdAt: {
       type: DataTypes.DATE,

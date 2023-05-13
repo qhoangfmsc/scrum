@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const account_route = require("./account_route");
+const accounts_route = require("./accounts_route");
 const companies_route = require("./companies_route");
 
-router.use("/comment", account_route);
+router.use("/accounts", accounts_route);
 router.use("/companies", companies_route);
 
 module.exports = router;
