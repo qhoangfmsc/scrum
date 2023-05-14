@@ -7,7 +7,7 @@ single = {
     getData: function (callback) {
         let object = this;
         let url = "/companies/get-all";
-        let request = "";
+        let request = null;
         api.request(url, request, function (res) {
             callback(res);
         });
