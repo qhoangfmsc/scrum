@@ -120,8 +120,7 @@
               <div class="card-header">All Companies
                 <div class="card-action">
                   <div class="dropdown">
-                    <a type="button" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="modal"
-                      data-target="#myModal">
+                      <a type="button" class="dropdown-toggle dropdown-toggle-nocaret" id="addCompany">
                       <i class="zmdi zmdi-plus-square"></i>
                     </a>
 
@@ -131,6 +130,7 @@
                         <div class="modal-content">
                           <div class="modal-header" style="background-color: #dee2e6;">
                             <h4 class="modal-title" style="color: black;">Company Information</h4>
+                            <input id="getId" type="text" class="form-control d-none">
                           </div>
                           <div class="modal-body bg-theme bg-theme1">
                             <!-- body modal -->
@@ -206,21 +206,22 @@
                               <div class="col-1">
                                 <img
                                   src="https://upload.wikimedia.org/wikipedia/commons/2/27/Square%2C_Inc_-_Square_Logo.jpg"
-                                  alt="example placeholder" style="width: 40px;" />
+                                  style="width: 2.5rem; height:2.5rem;" id="logoModal" />
                               </div>
                               <div class="col-8">
-                                <div class="btn btn-primary btn-rounded ml-4">
-                                  <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                  <input type="file" class="form-control d-none" id="customFile1" />
-                                </div>
+                                <input id="linkLogo" type="text" class="form-control" placeholder="Link Image">
                               </div>
                             </div>
                             <!-- CloseBtn -->
                             <div class="btnADD"
                               style="text-align: center; text-transform: uppercase; font-size: medium;">
-                              <button type="button" class="btn btn-default text-white"
+                              <button id="createCompanyButton" type="button" class="btn btn-default text-white"
                                 style="box-shadow: 0px 1px 5px #ffffff;" data-dismiss="modal">
                                 Create new company
+                              </button>
+                              <button id="modifyCompanyButton" type="button" class="btn btn-default text-white d-none"
+                                style="box-shadow: 0px 1px 5px #ffffff;" data-dismiss="modal">
+                                Modify company
                               </button>
                             </div>
                           </div>

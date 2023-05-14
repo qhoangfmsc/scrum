@@ -7,7 +7,7 @@ index = {
     getData: function (callback) {
         let object = this;
         let url = "/companies/get-all";
-        let request = "";
+        let request = null;
         api.request(url, request, function (res) {
             callback(res);
         });
@@ -35,16 +35,16 @@ index = {
                         </li>
                     </ul>
                 </div>
-                <div class="details pl-4">
+                <div class="details pl-4 w-100">
                     <div class="title d-flex flex-row justify-content-between mb-4">
                         <div class="titles" style="margin-block: auto;">
                             <a href="single.html?id=${res.id}">
                                 <h4 class="mb-0">${res.name}</h4>
                             </a>
                         </div>
-                        <ul class="btns">
+                        <div class="btns">
                             <li><a href="single.html?id=${res.id}">Apply</a></li>
-                        </ul>
+                        </div>
                     </div>
                     <div>
                         <p>${res.description}</p>
