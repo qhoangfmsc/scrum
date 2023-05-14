@@ -43,8 +43,10 @@ module.exports = {
   displayAllCompanies: async function (req, res) {
     try {
       const data = await getAllCompanies();
-      const careerArray = data[0].career.split(", ");
-      data[0].career = careerArray;
+      for (let i = 0; i < data.length; i++) {
+        const careerArray = data[i].career.split(", ");
+        data[i].career = careerArray;
+      }
       if (data) {
         res.status(200).json({ result: "success", content: data });
       }

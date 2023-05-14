@@ -29,7 +29,7 @@ module.exports = {
           hashedPassword = hash;
           // Insert account into database
           const check = await getAccountById(id);
-          if ((check.length = 0)) {
+          if (check.length == 1) {
             res.status(404).json({ result: "fail", content: "This ID is already exists" });
           } else {
             const result = await insertAccount(id, username, hashedPassword, name, skill);
