@@ -14,9 +14,9 @@ module.exports = {
       const result = await insertCompany(name, address, career, link, avatar, description, requirement);
       if (result) {
         res.status(200).json({ result: "success", content: "Company added successfully!" });
-      }
+      } else res.status(200).json({ result: "fail", content: "Company added fail!" });
     } catch (err) {
-      res.status(404).json({ result: "fail", content: "Company added fail!" });
+      res.status(404).json({ result: "fail", content: err });
     }
   },
 
@@ -34,24 +34,24 @@ module.exports = {
       const result = await updateCompany(id, name, address, career, link, avatar, description, requirement);
       if (result) {
         res.status(200).json({ result: "success", content: "Company update successfully!" });
-      }
+      } else res.status(200).json({ result: "fail", content: "Company update fail!" });
     } catch (err) {
-      res.status(404).json({ result: "fail", content: "Company update fail!" });
+      res.status(404).json({ result: "fail", content: err });
     }
   },
 
   displayAllCompanies: async function (req, res) {
     try {
       const data = await getAllCompanies();
-      for (let i = 0; i < data.length; i++) {
-        const careerArray = data[i].career.split(", ");
-        data[i].career = careerArray;
-      }
-      if (data) {
+      if (data.length > 0) {
+        for (let i = 0; i < data.length; i++) {
+          const careerArray = data[i].career.split(", ");
+          data[i].career = careerArray;
+        }
         res.status(200).json({ result: "success", content: data });
-      }
+      } else res.status(200).json({ result: "fail", content: "Get all companies fail" });
     } catch (err) {
-      res.status(404).json({ result: "fail", content: "Get companies fail!" });
+      res.status(404).json({ result: "fail", content: err });
     }
   },
 };

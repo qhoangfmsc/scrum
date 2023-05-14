@@ -15,11 +15,14 @@ const Accounts = sequelize.define(
     password: {
       type: DataTypes.STRING(255),
     },
-    name: {
+    degree: {
       type: DataTypes.STRING(255),
     },
     skill: {
       type: DataTypes.STRING(255),
+    },
+    session: {
+      type: DataTypes.STRING(12),
     },
     createdAt: {
       type: DataTypes.DATE,
@@ -32,12 +35,12 @@ const Accounts = sequelize.define(
   }
 );
 
-async function insertAccount(id, username, password, name, skill) {
+async function insertAccount(id, username, password, degree, skill) {
   try {
     await Accounts.create({
       id: id,
       username: username,
-      name: name,
+      degree: degree,
       skill: skill,
       password: password,
     });
@@ -84,6 +87,55 @@ async function updateAccountPassword(id, password) {
   }
 }
 
+async function generateAccountSessionKey(id, session) {
+  try {
+    await Accounts.update(
+      {
+        session: session,
+      },
+      {
+        where: {
+          id: id,
+        },
+      }
+    );
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
+async function deleteAccountSessionKey(id, session) {
+  try {
+    await Accounts.update(
+      {
+        session: "NULL",
+      },
+      {
+        where: {
+          id: id,
+        },
+      }
+    );
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
+
+async function checkAccountSessionKey(id) {
+  try {
+    const data = await sequelize.query("Select session from accounts where id ='" + id + "'", {
+      type: QueryTypes.SELECT,
+    });
+    return data;
+  } catch (err) {
+    return false;
+  }
+}
+
 async function getAllAccounts() {
   try {
     const data = await sequelize.query("Select * from accounts", { type: QueryTypes.SELECT });
@@ -123,4 +175,7 @@ module.exports = {
   getAllAccounts,
   getAccountById,
   getAccountByIdAndPassword,
+  generateAccountSessionKey,
+  checkAccountSessionKey,
+  deleteAccountSessionKey,
 };
