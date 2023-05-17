@@ -5,7 +5,7 @@ const Accounts = sequelize.define(
   "accounts",
   {
     id: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
     },
@@ -48,23 +48,6 @@ async function insertAccount(id, username, password, degree, skill) {
   } catch (err) {
     console.log(err);
     return false;
-  }
-}
-
-async function getAccountByIdAndPassword(id, password) {
-  try {
-    const data = await sequelize.query(
-      "select * from accounts where id ='" + id + "' and password ='" + password + "'",
-      { type: QueryTypes.SELECT }
-    );
-    if (data.length > 0) {
-      return data;
-    } else {
-      return null;
-    }
-  } catch (err) {
-    console.log(err);
-    return null;
   }
 }
 
@@ -174,7 +157,6 @@ module.exports = {
   getAccountPasswordById,
   getAllAccounts,
   getAccountById,
-  getAccountByIdAndPassword,
   generateAccountSessionKey,
   checkAccountSessionKey,
   deleteAccountSessionKey,

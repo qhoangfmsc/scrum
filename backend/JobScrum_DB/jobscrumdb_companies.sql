@@ -33,7 +33,7 @@ CREATE TABLE `companies` (
   `requirement` varchar(500) DEFAULT NULL,
   `createdAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `companies` (
 
 LOCK TABLES `companies` WRITE;
 /*!40000 ALTER TABLE `companies` DISABLE KEYS */;
-INSERT INTO `companies` VALUES (1,'Apple Inc','Cupertino, California, USA ','Technology, Consumer electronics ','https://www.apple.com/ ','https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png ','Apple Inc. is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services. ','•	Requirement: Strong programming skills in Swift, Objective-C, and/or C++, experience in developing iOS or macOS applications, and excellent problem-solving skills.',NULL);
+INSERT INTO `companies` VALUES (1,'Apple Inc','Cupertino, California, USA','Technology, Consumer electronics','https://www.apple.com/','','Apple Inc. is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services.','Requirement: Strong programming skills in Swift, Objective-C, and/or C++, experience in developing iOS or macOS applications, and excellent problem-solving skills.','2023-05-14 11:50:03'),(2,'a','82b/6','Bu Khu','test.com','test.com/avatar.jpg','Test thoi','phai biet bu khu','2023-05-14 14:50:03'),(3,'a','82b/6','Bu Khu, Bu khu 2','test.com','test.com/avatar.jpg','Test thoi','phai biet bu khu','2023-05-14 15:15:34');
 /*!40000 ALTER TABLE `companies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-13 20:29:01
+-- Dump completed on 2023-05-18  0:38:33

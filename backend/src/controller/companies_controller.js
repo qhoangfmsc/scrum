@@ -1,4 +1,4 @@
-const { insertCompany, getAllCompanies, updateCompany } = require("../models/companies");
+const { insertCompany, getAllCompanies, updateCompany, getCompanyById } = require("../models/companies");
 
 module.exports = {
   createCompany: async function (req, res) {
@@ -50,6 +50,18 @@ module.exports = {
         }
         res.status(200).json({ result: "success", content: data });
       } else res.status(200).json({ result: "fail", content: "Get all companies fail" });
+    } catch (err) {
+      res.status(404).json({ result: "fail", content: err });
+    }
+  },
+
+  displayCompanyInfo: async function (req, res) {
+    try {
+      const id = req.body.id;
+      const data = await getCompanyById(id);
+      if (data.length > 0) {
+        res.status(200).json({ result: "success", content: data });
+      } else res.status(200).json({ result: "fail", content: "Get company's information fail" });
     } catch (err) {
       res.status(404).json({ result: "fail", content: err });
     }

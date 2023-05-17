@@ -111,4 +111,13 @@ async function getAllCompanies() {
   }
 }
 
-module.exports = { Companies, insertCompany, updateCompany, getAllCompanies };
+async function getCompanyById(id) {
+  try {
+    const data = await sequelize.query("Select * from companies where id = '" + id + "'", { type: QueryTypes.SELECT });
+    return data;
+  } catch (err) {
+    return false;
+  }
+}
+
+module.exports = { Companies, insertCompany, updateCompany, getAllCompanies, getCompanyById };

@@ -7,7 +7,6 @@ const {
   generateAccountSessionKey,
   checkAccountSessionKey,
   deleteAccountSessionKey,
-  getAccountByIdAndPassword,
 } = require("../models/accounts");
 const bcrypt = require("bcryptjs");
 const funtioncs = require("../global/functions");
@@ -68,11 +67,16 @@ module.exports = {
   checkAccountSession: async function (req, res) {
     try {
       const id = req.body.id;
-      const result = await checkAccountSessionKey(id);
-      if (result.length == 1) {
-        res.status(200).json({ result: "success", content: "Session key exist" });
-      } else {
+      const session = req.body.session;
+      let storeSession = await checkAccountSessionKey(id);
+      storeSession = storeSession[0].session;
+      if (storeSession == null || session == null) {
         res.status(404).json({ result: "fail", content: "Session key doesnt exist!" });
+      } else {
+        console.log(storeSession, id, session);
+
+        if (session === storeSession) res.status(200).json({ result: "success", content: "Session key is valid" });
+        else res.status(200).json({ result: "fail", content: "Session key is not valid" });
       }
     } catch (err) {
       res.status(404).json({ result: "fail", content: err });
@@ -101,7 +105,10 @@ module.exports = {
           } else {
             const sessionKey = generateRandomString();
             generateAccountSessionKey(id, sessionKey);
-            res.status(200).json({ result: "success", content: "Login successfully" });
+            console.log;
+            res
+              .status(200)
+              .json({ result: "success", content: { messsage: "Login successfully", id: id, session: sessionKey } });
             return;
           }
         });
