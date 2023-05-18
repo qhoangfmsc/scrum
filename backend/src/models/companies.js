@@ -111,7 +111,7 @@ async function getAllCompanies() {
   }
 }
 
-async function jobFiltering(companyname, jobname, requirement) {
+async function jobFiltering(companyname, jobname, career) {
   try {
     const data = await sequelize.query(
       "Select * from companies where name like '%" +
@@ -119,8 +119,9 @@ async function jobFiltering(companyname, jobname, requirement) {
         "%' and address like '%" +
         jobname +
         "%' and requirement like '%" +
-        requirement +
-        "%'"
+        career +
+        "%'",
+      { type: QueryTypes.SELECT }
     );
     return data;
   } catch (error) {

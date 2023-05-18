@@ -1,4 +1,4 @@
-const { insertCompany, getAllCompanies, updateCompany, getCompanyById } = require("../models/companies");
+const { insertCompany, getAllCompanies, updateCompany, getCompanyById, jobFiltering } = require("../models/companies");
 
 module.exports = {
   createCompany: async function (req, res) {
@@ -71,9 +71,8 @@ module.exports = {
     try {
       const companyname = req.body.name;
       const jobname = req.body.address;
-      const requirement = req.body.requirement;
-
-      const result = await filtering(companyname, jobname, requirement);
+      const career = req.body.career;
+      const result = await jobFiltering(companyname, jobname, career);
       if (result) {
         res.status(200).json({ result: "success", content: result });
       } else res.status(200).json({ result: "fail", content: "Filtering fail!" });
