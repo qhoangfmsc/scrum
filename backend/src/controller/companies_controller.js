@@ -60,6 +60,10 @@ module.exports = {
       const id = req.body.id;
       const data = await getCompanyById(id);
       if (data.length > 0) {
+        for (let i = 0; i < data.length; i++) {
+          const careerArray = data[i].career.replaceAll(" ", "").split(",");
+          data[i].career = careerArray;
+        }
         res.status(200).json({ result: "success", content: data });
       } else res.status(200).json({ result: "fail", content: "Get company's information fail" });
     } catch (err) {
