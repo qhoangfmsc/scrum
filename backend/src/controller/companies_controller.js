@@ -45,7 +45,7 @@ module.exports = {
       const data = await getAllCompanies();
       if (data.length > 0) {
         for (let i = 0; i < data.length; i++) {
-          const careerArray = data[i].career.split(", ");
+          const careerArray = data[i].career.replaceAll(" ", "").split(",");
           data[i].career = careerArray;
         }
         res.status(200).json({ result: "success", content: data });
@@ -62,6 +62,21 @@ module.exports = {
       if (data.length > 0) {
         res.status(200).json({ result: "success", content: data });
       } else res.status(200).json({ result: "fail", content: "Get company's information fail" });
+    } catch (err) {
+      res.status(404).json({ result: "fail", content: err });
+    }
+  },
+
+  filtering: async function (req, res) {
+    try {
+      const companyname = req.body.name;
+      const jobname = req.body.address;
+      const requirement = req.body.requirement;
+
+      const result = await filtering(companyname, jobname, requirement);
+      if (result) {
+        res.status(200).json({ result: "success", content: result });
+      } else res.status(200).json({ result: "fail", content: "Filtering fail!" });
     } catch (err) {
       res.status(404).json({ result: "fail", content: err });
     }

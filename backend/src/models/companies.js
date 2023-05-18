@@ -111,6 +111,23 @@ async function getAllCompanies() {
   }
 }
 
+async function jobFiltering(companyname, jobname, requirement) {
+  try {
+    const data = await sequelize.query(
+      "Select * from companies where name like '%" +
+        companyname +
+        "%' and address like '%" +
+        jobname +
+        "%' and requirement like '%" +
+        requirement +
+        "%'"
+    );
+    return data;
+  } catch (error) {
+    return false;
+  }
+}
+
 async function getCompanyById(id) {
   try {
     const data = await sequelize.query("Select * from companies where id = '" + id + "'", { type: QueryTypes.SELECT });
@@ -120,4 +137,4 @@ async function getCompanyById(id) {
   }
 }
 
-module.exports = { Companies, insertCompany, updateCompany, getAllCompanies, getCompanyById };
+module.exports = { Companies, insertCompany, updateCompany, getAllCompanies, getCompanyById, jobFiltering };
