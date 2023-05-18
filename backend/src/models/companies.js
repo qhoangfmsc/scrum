@@ -118,7 +118,7 @@ async function jobFiltering(companyname, jobname, career) {
         companyname +
         "%' and address like '%" +
         jobname +
-        "%' and requirement like '%" +
+        "%' and career like '%" +
         career +
         "%'",
       { type: QueryTypes.SELECT }
