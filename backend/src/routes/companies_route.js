@@ -7,6 +7,6 @@ router.post("/create", companies.createCompany);
 router.post("/update", companies.modifyCompany);
 router.post("/filter", companies.filtering);
 router.get("/get-all", companies.displayAllCompanies);
-router.get("/get-one", companies.displayCompanyInfo);
+router.post("/get-one", companies.displayCompanyInfo);
 
 module.exports = router;
