@@ -73,12 +73,14 @@ module.exports = {
 
   filtering: async function (req, res) {
     try {
-      const companyname = req.body.name;
-      const jobname = req.body.address;
-      const career = req.body.career;
-      const result = await jobFiltering(companyname, jobname, career);
-      if (result) {
-        res.status(200).json({ result: "success", content: result });
+      const value = req.body.value;
+      const data = await jobFiltering(value);
+      if (data.length > 0) {
+        for (let i = 0; i < data.length; i++) {
+          const careerArray = data[i].career.replaceAll(" ", "").split(",");
+          data[i].career = careerArray;
+        }
+        res.status(200).json({ result: "success", content: data });
       } else res.status(200).json({ result: "fail", content: "Filtering fail!" });
     } catch (err) {
       res.status(404).json({ result: "fail", content: err });
