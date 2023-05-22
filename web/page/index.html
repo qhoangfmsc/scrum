@@ -27,6 +27,7 @@
 	<link rel="stylesheet" href="../static/css/animate.min.css">
 	<link rel="stylesheet" href="../static/css/owl.carousel.css">
 	<link rel="stylesheet" href="../static/css/main.css">
+	<link rel="stylesheet" href="../static/scss/autocomplete.scss">
 </head>
 
 <body>
@@ -61,20 +62,12 @@
 					</h1>
 					<div class="serach-form-area">
 						<div class="row justify-content-center form-wrap">
-							<div class="col-lg-10 form-cols">
-								<div class="default-select" id="default-selects2">
-									<select>
-										<option value="">All Category</option>
-										<option value="technology">Technology</option>
-										<option value="accounting">Accounting</option>
-										<option value="graphicdesign">Graphic Design</option>
-									</select>
+							<div class="col-lg-12 form-cols">
+								<div class="autocomplete" style="width:100%;">
+									<input placeholder="Filtering by Company Name, Job Name and Skills company need..."
+										style="width: 100%;height: 100%;padding: 0.5rem;font-family: 'Poppins';"
+										id="filterInput">
 								</div>
-							</div>
-							<div class="col-lg-2 form-cols">
-								<button type="button" class="btn btn-info">
-									<span class="lnr lnr-magnifier"></span> Search
-								</button>
 							</div>
 						</div>
 					</div>
@@ -91,33 +84,21 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="single-feature">
 						<h4>Searching</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing.
-						</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single-feature">
 						<h4>Applying</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing.
-						</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single-feature">
 						<h4>Security</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing.
-						</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="single-feature">
 						<h4>Notifications</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing.
-						</p>
 					</div>
 				</div>
 			</div>
@@ -170,9 +151,7 @@
 	<section class="post-area section-gap">
 		<div class="container">
 			<div class="row justify-content-center d-flex">
-				<div class="col-lg-12 post-list" id="postList">
-				</div>
-				<div class="col-lg-0 sidebar"></div>
+				<div class="col-lg-12 post-list" id="postList"></div>
 			</div>
 		</div>
 	</section>
@@ -249,7 +228,7 @@
 				<div class="col-lg-6  col-md-12">
 					<div class="single-footer-widget newsletter">
 						<h6>Newsletter</h6>
-						<p>You can trust us. we only send promo offers, not a single spam.</p>
+						<p>You can trust us. Send email for us to confirm and create account for you.</p>
 						<div id="mc_embed_signup">
 							<form target="_blank" novalidate="true"
 								action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -300,6 +279,7 @@
 		</div>
 	</footer>
 	<!-- End footer Area -->
+	<script src="../static/js/autocomplete.js"></script>
 	<script src="../static/js/index.js"></script>
 	<script src="../static/js/api.js"></script>
 	<script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
@@ -324,6 +304,7 @@
 	<script>
 		window.addEventListener("DOMContentLoaded", function () {
 			index.build();
+			autocomplete.build();
 		});
 	</script>
 </body>
